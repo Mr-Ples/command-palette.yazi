@@ -86,7 +86,7 @@ local function parse_keymap_file(file_path)
       end
       
       -- Parse run command
-      local run_match = line:match('^run%s*=%s*"([^"]*)"')
+      local run_match = line:match('^run%s*=%s*"(.*)"%s*$')
       if run_match then
         current_entry.run = run_match
       else
@@ -141,19 +141,32 @@ local function get_all_commands()
   return commands
 end
 
+-- Get current hovered file in sync context
+local get_current_file = ya.sync(function()
+  local h = cx.active.current.hovered
+  return h and tostring(h.url) or ""
+end)
+
 -- Execute a yazi command
 local function execute_command(cmd_string)
 --   debug("Executing command: " .. cmd_string)
+    debug("test1")
+-- Get current hovered file
+  local current_file = get_current_file()
+  debug("test2: " .. current_file)
+  debug("test3")
   
   -- Parse the command type and execute accordingly
   if cmd_string:match("^shell") then
-    -- Handle shell commands
+    -- Handle shell commands - pass current file as argument
     local shell_cmd = cmd_string:match('shell%s+["\']([^"\']+)["\']') or 
                      cmd_string:match('shell%s+--block%s+["\']([^"\']+)["\']')
     if shell_cmd then
+      -- Remove trailing backslash if present
+      shell_cmd = shell_cmd:gsub("\\$", "")
       local is_blocking = cmd_string:match("--block") and true or false
-    --   debug("Shell command: " .. shell_cmd .. " (blocking: " .. tostring(is_blocking) .. ")")
-      ya.manager_emit("shell", { shell_cmd, block = is_blocking })
+      debug("Shell command: " .. shell_cmd .. " with file: " .. current_file)
+      ya.manager_emit("shell", { shell_cmd .. " " .. current_file, block = is_blocking })
     else
       fail("Could not parse shell command: " .. cmd_string)
     end
