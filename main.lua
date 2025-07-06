@@ -150,11 +150,8 @@ end)
 -- Execute a yazi command
 local function execute_command(cmd_string)
 --   debug("Executing command: " .. cmd_string)
-    debug("test1")
 -- Get current hovered file
   local current_file = get_current_file()
-  debug("test2: " .. current_file)
-  debug("test3")
   
   -- Parse the command type and execute accordingly
   if cmd_string:match("^shell") then
@@ -165,7 +162,7 @@ local function execute_command(cmd_string)
       -- Remove trailing backslash if present
       shell_cmd = shell_cmd:gsub("\\$", "")
       local is_blocking = cmd_string:match("--block") and true or false
-      debug("Shell command: " .. shell_cmd .. " with file: " .. current_file)
+    --   debug("Shell command: " .. shell_cmd .. " with file: " .. current_file)
       ya.manager_emit("shell", { shell_cmd .. " " .. current_file, block = is_blocking })
     else
       fail("Could not parse shell command: " .. cmd_string)
