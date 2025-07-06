@@ -6,6 +6,8 @@ This plugin is completely vibe coded, i have no idea how it works. I didn't even
 
 A command palette plugin that allows you to search and execute yazi commands from your keymap configuration.
 
+[Watch Demo Video](path/to/your/video.mp4)
+
 ## Features
 
 - Parses your `keymap.toml` files to extract all available commands
