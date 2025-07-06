@@ -6,7 +6,7 @@ This plugin is completely vibe coded, i have no idea how it works. I didn't even
 
 A command palette plugin that allows you to search and execute yazi commands from your keymap configuration.
 
-[Watch Demo Video](https://github.com/Mr-Ples/command-palette.yazi/blob/main/showcase.gif)
+![Watch Demo Video](https://github.com/Mr-Ples/command-palette.yazi/blob/main/showcase.gif)
 
 ## Features
 
