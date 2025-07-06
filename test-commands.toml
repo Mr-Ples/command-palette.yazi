@@ -1,0 +1,564 @@
+[[manager.prepend_keymap]]
+on = "<Esc>"
+run = "escape"
+desc = "Exit visual mode, clear selected, or cancel search"
+
+[[manager.prepend_keymap]]
+on = "<C-[>"
+run = "escape"
+desc = "Exit visual mode, clear selected, or cancel search"
+
+[[manager.prepend_keymap]]
+on = "q"
+run = "quit"
+desc = "Quit the process"
+
+[[manager.prepend_keymap]]
+on = "Q"
+run = "quit --no-cwd-file"
+desc = "Quit the process without outputting cwd-file"
+
+[[manager.prepend_keymap]]
+on = "<C-c>"
+run = "close"
+desc = "Close the current tab, or quit if it's last"
+
+[[manager.prepend_keymap]]
+on = "<C-z>"
+run = "suspend"
+desc = "Suspend the process"
+
+[[manager.prepend_keymap]]
+on = "k"
+run = "arrow -1"
+desc = "Move cursor up"
+
+[[manager.prepend_keymap]]
+on = "j"
+run = "arrow 1"
+desc = "Move cursor down"
+
+[[manager.prepend_keymap]]
+on = "<Up>"
+run = "arrow -1"
+desc = "Move cursor up"
+
+[[manager.prepend_keymap]]
+on = "<Down>"
+run = "arrow 1"
+desc = "Move cursor down"
+
+[[manager.prepend_keymap]]
+on = "<C-u>"
+run = "arrow -50%"
+desc = "Move cursor up half page"
+
+[[manager.prepend_keymap]]
+on = "<C-d>"
+run = "arrow 50%"
+desc = "Move cursor down half page"
+
+[[manager.prepend_keymap]]
+on = "<C-b>"
+run = "arrow -100%"
+desc = "Move cursor up one page"
+
+[[manager.prepend_keymap]]
+on = "<C-f>"
+run = "arrow 100%"
+desc = "Move cursor down one page"
+
+[[manager.prepend_keymap]]
+on = "<S-PageUp>"
+run = "arrow -50%"
+desc = "Move cursor up half page"
+
+[[manager.prepend_keymap]]
+on = "<S-PageDown>"
+run = "arrow 50%"
+desc = "Move cursor down half page"
+
+[[manager.prepend_keymap]]
+on = "<PageUp>"
+run = "arrow -100%"
+desc = "Move cursor up one page"
+
+[[manager.prepend_keymap]]
+on = "<PageDown>"
+run = "arrow 100%"
+desc = "Move cursor down one page"
+
+[[manager.prepend_keymap]]
+on = ["g", "g"]
+run = "arrow -99999999"
+desc = "Move cursor to the top"
+
+[[manager.prepend_keymap]]
+on = "G"
+run = "arrow 99999999"
+desc = "Move cursor to the bottom"
+
+[[manager.prepend_keymap]]
+on = "h"
+run = "leave"
+desc = "Go back to the parent directory"
+
+[[manager.prepend_keymap]]
+on = "l"
+run = "enter"
+desc = "Enter the child directory"
+
+[[manager.prepend_keymap]]
+on = "<Left>"
+run = "leave"
+desc = "Go back to the parent directory"
+
+[[manager.prepend_keymap]]
+on = "<Right>"
+run = "enter"
+desc = "Enter the child directory"
+
+[[manager.prepend_keymap]]
+on = "H"
+run = "back"
+desc = "Go back to the previous directory"
+
+[[manager.prepend_keymap]]
+on = "L"
+run = "forward"
+desc = "Go forward to the next directory"
+
+[[manager.prepend_keymap]]
+on = "<Space>"
+run = ["toggle", "arrow 1"]
+desc = "Toggle the current selection state"
+
+[[manager.prepend_keymap]]
+on = "<C-a>"
+run = "toggle_all --state=on"
+desc = "Select all files"
+
+[[manager.prepend_keymap]]
+on = "<C-r>"
+run = "toggle_all"
+desc = "Invert selection of all files"
+
+[[manager.prepend_keymap]]
+on = "v"
+run = "visual_mode"
+desc = "Enter visual mode (selection mode)"
+
+[[manager.prepend_keymap]]
+on = "V"
+run = "visual_mode --unset"
+desc = "Enter visual mode (unset mode)"
+
+[[manager.prepend_keymap]]
+on = "K"
+run = "seek -5"
+desc = "Seek up 5 units in the preview"
+
+[[manager.prepend_keymap]]
+on = "J"
+run = "seek 5"
+desc = "Seek down 5 units in the preview"
+
+[[manager.prepend_keymap]]
+on = "<Tab>"
+run = "spot"
+desc = "Spot hovered file"
+
+[[manager.prepend_keymap]]
+on = "o"
+run = "open"
+desc = "Open selected files"
+
+[[manager.prepend_keymap]]
+on = "O"
+run = "open --interactive"
+desc = "Open selected files interactively"
+
+[[manager.prepend_keymap]]
+on = "<Enter>"
+run = "open"
+desc = "Open selected files"
+
+[[manager.prepend_keymap]]
+on = "<S-Enter>"
+run = "open --interactive"
+desc = "Open selected files interactively"
+
+[[manager.prepend_keymap]]
+on = "y"
+run = "yank"
+desc = "Yank selected files (copy)"
+
+[[manager.prepend_keymap]]
+on = "x"
+run = "yank --cut"
+desc = "Yank selected files (cut)"
+
+[[manager.prepend_keymap]]
+on = "p"
+run = "paste"
+desc = "Paste yanked files"
+
+[[manager.prepend_keymap]]
+on = "P"
+run = "paste --force"
+desc = "Paste yanked files (overwrite if the destination exists)"
+
+[[manager.prepend_keymap]]
+on = "-"
+run = "link"
+desc = "Symlink the absolute path of yanked files"
+
+[[manager.prepend_keymap]]
+on = "_"
+run = "link --relative"
+desc = "Symlink the relative path of yanked files"
+
+[[manager.prepend_keymap]]
+on = "<C-->"
+run = "hardlink"
+desc = "Hardlink yanked files"
+
+[[manager.prepend_keymap]]
+on = "Y"
+run = "unyank"
+desc = "Cancel the yank status"
+
+[[manager.prepend_keymap]]
+on = "X"
+run = "unyank"
+desc = "Cancel the yank status"
+
+[[manager.prepend_keymap]]
+on = "d"
+run = "remove"
+desc = "Trash selected files"
+
+[[manager.prepend_keymap]]
+on = "D"
+run = "remove --permanently"
+desc = "Permanently delete selected files"
+
+[[manager.prepend_keymap]]
+on = "a"
+run = "create"
+desc = "Create a file (ends with / for directories)"
+
+[[manager.prepend_keymap]]
+on = "r"
+run = "rename --cursor=before_ext"
+desc = "Rename selected file(s)"
+
+[[manager.prepend_keymap]]
+on = ";"
+run = "shell --interactive"
+desc = "Run a shell command"
+
+[[manager.prepend_keymap]]
+on = ":"
+run = "shell --block --interactive"
+desc = "Run a shell command (block until finishes)"
+
+[[manager.prepend_keymap]]
+on = "."
+run = "hidden toggle"
+desc = "Toggle the visibility of hidden files"
+
+[[manager.prepend_keymap]]
+on = "s"
+run = "search --via=fd"
+desc = "Search files by name via fd"
+
+[[manager.prepend_keymap]]
+on = "S"
+run = "search --via=rg"
+desc = "Search files by content via ripgrep"
+
+[[manager.prepend_keymap]]
+on = "<C-s>"
+run = "escape --search"
+desc = "Cancel the ongoing search"
+
+[[manager.prepend_keymap]]
+on = "z"
+run = "plugin zoxide"
+desc = "Jump to a directory via zoxide"
+
+[[manager.prepend_keymap]]
+on = "Z"
+run = "plugin fzf"
+desc = "Jump to a file/directory via fzf"
+
+[[manager.prepend_keymap]]
+on = ["m", "s"]
+run = "linemode size"
+desc = "Linemode: size"
+
+[[manager.prepend_keymap]]
+on = ["m", "p"]
+run = "linemode permissions"
+desc = "Linemode: permissions"
+
+[[manager.prepend_keymap]]
+on = ["m", "b"]
+run = "linemode btime"
+desc = "Linemode: btime"
+
+[[manager.prepend_keymap]]
+on = ["m", "m"]
+run = "linemode mtime"
+desc = "Linemode: mtime"
+
+[[manager.prepend_keymap]]
+on = ["m", "o"]
+run = "linemode owner"
+desc = "Linemode: owner"
+
+[[manager.prepend_keymap]]
+on = ["m", "n"]
+run = "linemode none"
+desc = "Linemode: none"
+
+[[manager.prepend_keymap]]
+on = ["c", "c"]
+run = "copy path"
+desc = "Copy the file path"
+
+[[manager.prepend_keymap]]
+on = ["c", "d"]
+run = "copy dirname"
+desc = "Copy the directory path"
+
+[[manager.prepend_keymap]]
+on = ["c", "f"]
+run = "copy filename"
+desc = "Copy the filename"
+
+[[manager.prepend_keymap]]
+on = ["c", "n"]
+run = "copy name_without_ext"
+desc = "Copy the filename without extension"
+
+[[manager.prepend_keymap]]
+on = "/"
+run = "find --smart"
+desc = "Find next file"
+
+[[manager.prepend_keymap]]
+on = "?"
+run = "find --previous --smart"
+desc = "Find previous file"
+
+[[manager.prepend_keymap]]
+on = "n"
+run = "find_arrow"
+desc = "Goto the next found"
+
+[[manager.prepend_keymap]]
+on = "N"
+run = "find_arrow --previous"
+desc = "Goto the previous found"
+
+[[manager.prepend_keymap]]
+on = [",", "m"]
+run = ["sort mtime --reverse=no", "linemode mtime"]
+desc = "Sort by modified time"
+
+[[manager.prepend_keymap]]
+on = [",", "M"]
+run = ["sort mtime --reverse", "linemode mtime"]
+desc = "Sort by modified time (reverse)"
+
+[[manager.prepend_keymap]]
+on = [",", "b"]
+run = ["sort btime --reverse=no", "linemode btime"]
+desc = "Sort by birth time"
+
+[[manager.prepend_keymap]]
+on = [",", "B"]
+run = ["sort btime --reverse", "linemode btime"]
+desc = "Sort by birth time (reverse)"
+
+[[manager.prepend_keymap]]
+on = [",", "e"]
+run = "sort extension --reverse=no"
+desc = "Sort by extension"
+
+[[manager.prepend_keymap]]
+on = [",", "E"]
+run = "sort extension --reverse"
+desc = "Sort by extension (reverse)"
+
+[[manager.prepend_keymap]]
+on = [",", "a"]
+run = "sort alphabetical --reverse=no"
+desc = "Sort alphabetically"
+
+[[manager.prepend_keymap]]
+on = [",", "A"]
+run = "sort alphabetical --reverse"
+desc = "Sort alphabetically (reverse)"
+
+[[manager.prepend_keymap]]
+on = [",", "n"]
+run = "sort natural --reverse=no"
+desc = "Sort naturally"
+
+[[manager.prepend_keymap]]
+on = [",", "N"]
+run = "sort natural --reverse"
+desc = "Sort naturally (reverse)"
+
+[[manager.prepend_keymap]]
+on = [",", "s"]
+run = ["sort size --reverse=no", "linemode size"]
+desc = "Sort by size"
+
+[[manager.prepend_keymap]]
+on = [",", "S"]
+run = ["sort size --reverse", "linemode size"]
+desc = "Sort by size (reverse)"
+
+[[manager.prepend_keymap]]
+on = [",", "r"]
+run = "sort random --reverse=no"
+desc = "Sort randomly"
+
+[[manager.prepend_keymap]]
+on = ["g", "h"]
+run = "cd ~"
+desc = "Go home"
+
+[[manager.prepend_keymap]]
+on = ["g", "c"]
+run = "cd ~/.config"
+desc = "Goto ~/.config"
+
+[[manager.prepend_keymap]]
+on = ["g", "d"]
+run = "cd ~/Downloads"
+desc = "Goto ~/Downloads"
+
+[[manager.prepend_keymap]]
+on = ["g", "<Space>"]
+run = "cd --interactive"
+desc = "Jump interactively"
+
+[[manager.prepend_keymap]]
+on = "t"
+run = "tab_create --current"
+desc = "Create a new tab with CWD"
+
+[[manager.prepend_keymap]]
+on = "1"
+run = "tab_switch 0"
+desc = "Switch to the first tab"
+
+[[manager.prepend_keymap]]
+on = "2"
+run = "tab_switch 1"
+desc = "Switch to the second tab"
+
+[[manager.prepend_keymap]]
+on = "3"
+run = "tab_switch 2"
+desc = "Switch to the third tab"
+
+[[manager.prepend_keymap]]
+on = "4"
+run = "tab_switch 3"
+desc = "Switch to the fourth tab"
+
+[[manager.prepend_keymap]]
+on = "5"
+run = "tab_switch 4"
+desc = "Switch to the fifth tab"
+
+[[manager.prepend_keymap]]
+on = "6"
+run = "tab_switch 5"
+desc = "Switch to the sixth tab"
+
+[[manager.prepend_keymap]]
+on = "7"
+run = "tab_switch 6"
+desc = "Switch to the seventh tab"
+
+[[manager.prepend_keymap]]
+on = "8"
+run = "tab_switch 7"
+desc = "Switch to the eighth tab"
+
+[[manager.prepend_keymap]]
+on = "9"
+run = "tab_switch 8"
+desc = "Switch to the ninth tab"
+
+[[manager.prepend_keymap]]
+on = "["
+run = "tab_switch -1 --relative"
+desc = "Switch to the previous tab"
+
+[[manager.prepend_keymap]]
+on = "]"
+run = "tab_switch 1 --relative"
+desc = "Switch to the next tab"
+
+[[manager.prepend_keymap]]
+on = "{"
+run = "tab_swap -1"
+desc = "Swap current tab with previous tab"
+
+[[manager.prepend_keymap]]
+on = "}"
+run = "tab_swap 1"
+desc = "Swap current tab with next tab"
+
+[[manager.prepend_keymap]]
+on = "w"
+run = "tasks_show"
+desc = "Show task manager"
+
+[[manager.prepend_keymap]]
+on = "~"
+run = "help"
+desc = "Open help"
+
+[[manager.prepend_keymap]]
+on = "<F1>"
+run = "help"
+desc = "Open help"
+
+[[manager.prepend_keymap]]
+on = ["c", "m"]
+run = "plugin chmod"
+desc = "Chmod on selected files"
+
+[[manager.prepend_keymap]]
+on = "<Enter>"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on = "<A-p>"
+run = "plugin toggle-pane min-preview"
+desc = "Hide or show preview pane"
+
+[[manager.prepend_keymap]]
+on = "M"
+run = "plugin toggle-pane max-preview"
+desc = "Maximize or restore preview pane"
+
+[[manager.prepend_keymap]]
+on = "<C-t>"
+run = "plugin sudo-demo"
+desc = "Use dudo"
+
+[[manager.prepend_keymap]]
+on = ["g", "s"]
+run = "plugin vcs-files"
+desc = "Show git file changes"
