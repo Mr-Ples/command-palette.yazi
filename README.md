@@ -18,7 +18,13 @@ A command palette plugin that allows you to search and execute yazi commands fro
 
 ## Installation
 
-This plugin is already installed in your yazi plugins directory.
+Install the plugin using the yazi package manager:
+
+```bash
+ya pkg add Mr-Ples/command-palette.yazi
+```
+
+Then copy the compatible keymap format to your plugin directory. The plugin includes a `compatible-formate-keymap.toml` file that demonstrates the proper format for the parser.
 
 ## Usage
 
@@ -28,20 +34,9 @@ The default behavior uses fzf for fuzzy searching:
 
 ```toml
 [[manager.prepend_keymap]]
-on = ["<C-c>", "p"]
+on = ["`"]
 desc = "Command palette (fzf)"
 run = "plugin command-palette"
-```
-
-### Built-in Interface
-
-For a simpler built-in selection interface:
-
-```toml
-[[manager.prepend_keymap]]
-on = ["<C-c>", "P"]
-desc = "Command palette (built-in)"
-run = "plugin command-palette --args=builtin"
 ```
 
 ## How It Works
@@ -57,6 +52,29 @@ run = "plugin command-palette --args=builtin"
    - Runs plugin commands with proper arguments
    - Handles native yazi commands
 
+## Keymap Format Requirements
+
+The parser expects keymap entries in this specific format:
+
+```toml
+[[manager.prepend_keymap]]
+on = "q"
+run = "quit"
+desc = "Quit the process"
+
+[[manager.prepend_keymap]]
+on = ["g", "g"]
+run = "arrow -99999999"
+desc = "Move cursor to the top"
+```
+
+**Important Notes:**
+- Use `on` for key bindings (supports both string and array formats)
+- Use `run` for the command to execute
+- Use `desc` for the description that appears in the palette
+- Each entry must be in a `[[manager.prepend_keymap]]` section
+- The parser is somewhat basic and expects this exact format
+
 ## Command Types Supported
 
 - **Shell commands**: `shell 'command'` or `shell --block 'command'`
@@ -65,4 +83,13 @@ run = "plugin command-palette --args=builtin"
 
 ## Requirements
 
-- For fzf mode: `fzf` must be installed and available in PATH 
+- For fzf mode: `fzf` must be installed and available in PATH
+- Keymap files must be in the compatible format shown above
+
+## Troubleshooting
+
+If commands aren't being detected:
+1. Check that your keymap file follows the exact format shown above
+2. Ensure the file is located in `~/.config/yazi/` or `~/.config/yazi/plugins/`
+3. Verify that each keymap entry has `on`, `run`, and `desc` fields
+4. The parser looks for `[[manager.prepend_keymap]]` sections specifically 

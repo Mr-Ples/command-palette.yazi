@@ -224,7 +224,7 @@ local function show_command_palette()
   
   local _permit = ya.hide()
   local child, err = Command("fzf")
-    :args({
+    :arg({
       "--height=80%",
       "--layout=reverse",
       "--border",
