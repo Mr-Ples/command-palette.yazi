@@ -21,7 +21,7 @@ A command palette plugin that allows you to search and execute yazi commands fro
 Install the plugin using the yazi package manager:
 
 ```bash
-ya pkg add Mr-Ples/command-palette.yazi
+ya pkg add Mr-Ples/command-palette
 ```
 
 Then copy the compatible keymap format to your plugin directory. The plugin includes a `compatible-formate-keymap.toml` file that demonstrates the proper format for the parser.
